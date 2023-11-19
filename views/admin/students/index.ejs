@@ -1,0 +1,185 @@
+<% const level4 = students.filter(s => s.level == 'L4DC' || s.level == 'L4BIT');
+const level5 = students.filter(s => s.level == 'L5DC' || s.level == 'L5BIT');
+const level6 = students.filter(s => s.level == 'L6DC' || s.level == 'L6BIT'); %>
+
+<h1 class="mb-3">
+  <strong>Students</strong>
+</h1>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="col-12">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                data-bs-toggle="tab"
+                href="#all"
+                role="tab"
+              >
+                <span class="hidden-sm-up"></span>
+                <span class="hidden-xs-down">All</span>
+                <i class="mdi mdi-cash-multiple"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="tab"
+                href="#level4"
+                role="tab"
+              >
+                <span class="hidden-sm-up"></span>
+                <span class="hidden-xs-down">Level 4</span>
+                <i class="mdi mdi-readability"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="tab"
+                href="#level5"
+                role="tab"
+              >
+                <span class="hidden-sm-up"></span>
+                <span class="hidden-xs-down">Level 5</span>
+                <i class="mdi mdi-readability"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="tab"
+                href="#level6"
+                role="tab"
+              >
+                <span class="hidden-sm-up"></span>
+                <span class="hidden-xs-down">Level 6</span>
+                <i class="mdi mdi-readability"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tab-content tabcontent-border">
+          <div class="tab-pane active" id="all" role="tabpanel">
+            <div class="table-responsive">
+              <table
+                id="zero_config"
+                class="table table-striped table-bordered"
+              >
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Level</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% students.forEach(s => {%>
+                  <tr>
+                    <td><%=s.studentId %></td>
+                    <td><%=s.firstname %></td>
+                    <td><%=s.lastname %></td>
+                    <td><%=s.level %></td>
+                  </tr>
+                  <%}); %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="level4" role="tabpanel">
+            <div class="table-responsive">
+              <table
+                id="zero_config"
+                class="table table-striped table-bordered"
+              >
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Level</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% level4.forEach(s => {%>
+                  <tr>
+                    <td><%=s.studentId %></td>
+                    <td><%=s.firstname %></td>
+                    <td><%=s.lastname %></td>
+                    <td><%=s.level %></td>
+                  </tr>
+                  <%}); %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="level5" role="tabpanel">
+            <div class="table-responsive">
+              <table
+                id="zero_config"
+                class="table table-striped table-bordered"
+              >
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Level</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% level5.forEach(s => {%>
+                  <tr>
+                    <td><%=s.studentId %></td>
+                    <td><%=s.firstname %></td>
+                    <td><%=s.lastname %></td>
+                    <td><%=s.level %></td>
+                  </tr>
+                  <%}); %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="level6" role="tabpanel">
+            <div class="table-responsive">
+              <table
+                id="zero_config"
+                class="table table-striped table-bordered"
+              >
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Level</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% level6.forEach(s => {%>
+                  <tr>
+                    <td><%=s.studentId %></td>
+                    <td><%=s.firstname %></td>
+                    <td><%=s.lastname %></td>
+                    <td><%=s.level %></td>
+                  </tr>
+                  <%}); %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

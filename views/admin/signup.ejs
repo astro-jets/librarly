@@ -1,0 +1,62 @@
+<style>
+    .card{height: 70vh;}
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<div class="card card-primary">
+    <div class="card-body">
+        <div class="text-center">
+            <h4>Sign Up</h4>
+        </div>
+        <form method="POST" action="/admin/signup/" class="needs-validation col-12 align-center" novalidate="">
+            <div class="col-8 form-cover">
+                <div class="row mt-3 mb-3">
+                    <div class="form-group col-5">
+                        <label for="email">First Name</label>
+                        <input id="firstname" type="text" class="form-control" name="firstname" tabindex="1" required autofocus>
+                        <div class="invalid-feedback">
+                            Please fill in your email
+                        </div>
+                    </div>
+
+                    <div class="form-group col-5">
+                        <label for="email">Last Name</label>
+                        <input id="lastname" type="text" class="form-control" name="lastname" tabindex="1" required autofocus>
+                        <div class="invalid-feedback">
+                            Please fill in your email
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group col-10 mb-3">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
+                    <div class="invalid-feedback">
+                        Please fill in your email
+                    </div>
+                </div>
+
+                <div class="form-group col-10 mb-3">
+                    <div class="d-block">
+                        <label for="password" class="control-label">Password</label>
+                    </div>
+                    <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
+                    <div class="invalid-feedback">
+                        please fill in your password
+                    </div>
+                </div>
+
+                <div class="form-group col-10 mb-3">
+                    <button type="submit" class="btn btn-success btn-lg btn-block rounded-pill col-4 text-light" tabindex="4">
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+            <a href="/admin/login" class="text-primary">Already have an account? Log In here.</a>
+        </form>
+    </div>
+</div>

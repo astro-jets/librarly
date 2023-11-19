@@ -1,0 +1,113 @@
+<main class="content">
+  <div class="container-fluid p-0">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title text-info mb-0">
+          New Staff
+          <i data-feather="user"></i>
+        </h2>
+      </div>
+
+      <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <form class="form-horizontal" action="/admin/staff/new" method="post">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="form-group col-6">
+                                    <label for="stuID" 
+                                        class="col-sm-3 text-end control-label col-form-label"    
+                                    >Employment ID</label>
+                                    <div class="col-md-9">
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="stuID" 
+                                            name="employmentId"
+                                            placeholder="xxxxxxxx" 
+                                            maxlength="8"
+                                            style="letter-spacing: 1.8rem;"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label class="col-md-3 mt-3">Department</label>
+                                    <div class="col-md-9">
+                                        <select 
+                                            class="select2 form-select shadow-none" 
+                                            style="width: 100%; height: 36px"
+                                            name="department">
+                                            <option>Staff Category</option>
+                                            <optgroup label="Accademic Satff">
+                                                <option value="intern">Intern</option>
+                                                <option value="lecturer">Lecturer</option>
+                                                <option value="operations">Operations Staff</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-6">
+                                    <label for="fname" class="col-sm-3 text-end control-label col-form-label">First Name</label>
+                                    <div class="col-sm-9">
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            name="firstname" 
+                                            id="fname" 
+                                            placeholder="First Name Here" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="lname" class="col-sm-3 text-end control-label col-form-label">Last Name</label>
+                                    <div class="col-sm-9">
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            name="lastname" 
+                                            id="lname" 
+                                            placeholder="Last Name Here" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-6">
+                                    <label for="phone" class="col-sm-3 text-end control-label col-form-label">Phone</label>
+                                    <div class="col-sm-9">
+                                        <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        name="phone"
+                                        id="phone" placeholder="Phone" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="email" class="col-sm-3 text-end control-label col-form-label">Email</label>
+                                    <div class="col-sm-9">
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            name="email" 
+                                            id="email" 
+                                            placeholder="Email" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="border-top">
+                            <div class="card-body">
+                                <button type="submit" class="btn btn-primary">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</main>

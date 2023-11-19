@@ -1,0 +1,54 @@
+<main class="content">
+  <div class="container-fluid p-0">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title text-info mb-0">
+          Issue Book
+          <i data-feather="send"></i>
+        </h2>
+      </div>
+
+      <form class="col-12" method="post" action="/admin/loan/">
+        <div class="row mb-3">
+          <div class="col-6">
+            <div class="card-body">
+              <label for="student">
+                Book ID
+                <i data-feather="book-open"></i>
+              </label>
+              <input
+                type="text"
+                name="book"
+                class="form-control"
+                placeholder="********"
+                maxlength="8"
+                style="font-size: 1.3rem; letter-spacing: 10px"
+              />
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card-body">
+              <label for="student">
+                Student ID
+                <i data-feather="users"></i>
+              </label>
+              <input
+                type="text"
+                name="student"
+                class="form-control"
+                placeholder="********"
+                maxlength="8"
+                style="font-size: 1.3rem; letter-spacing: 10px"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row px-3 mb-3">
+          <div class="col-12">
+            <button type="submit" class="col-12 btn btn-info">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

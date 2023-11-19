@@ -1,0 +1,185 @@
+<% const operations = staff.filter(s => s.department == 'operations'); const
+lecturers = staff.filter(s => s.department == 'lecturer'); const interns =
+staff.filter(s => s.department == 'intern'); %>
+
+<h1 class="mb-3">
+  <strong>Staff</strong>
+</h1>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="col-12">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                data-bs-toggle="tab"
+                href="#all"
+                role="tab"
+              >
+                <span class="hidden-sm-up"></span>
+                <span class="hidden-xs-down">All</span>
+                <i class="mdi mdi-cash-multiple"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="tab"
+                href="#interns"
+                role="tab"
+              >
+                <span class="hidden-sm-up"></span>
+                <span class="hidden-xs-down">Interns</span>
+                <i class="mdi mdi-readability"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="tab"
+                href="#lecturers"
+                role="tab"
+              >
+                <span class="hidden-sm-up"></span>
+                <span class="hidden-xs-down">Lecturers</span>
+                <i class="mdi mdi-readability"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="tab"
+                href="#operations"
+                role="tab"
+              >
+                <span class="hidden-sm-up"></span>
+                <span class="hidden-xs-down">Operations</span>
+                <i class="mdi mdi-readability"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tab-content tabcontent-border">
+          <div class="tab-pane active" id="all" role="tabpanel">
+            <div class="table-responsive">
+              <table
+                id="zero_config"
+                class="table table-striped table-bordered"
+              >
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Department</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% staff.forEach(s => {%>
+                  <tr>
+                    <td><%=s.employmentId %></td>
+                    <td><%=s.firstname %></td>
+                    <td><%=s.lastname %></td>
+                    <td><%=s.department %></td>
+                  </tr>
+                  <%}); %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="operations" role="tabpanel">
+            <div class="table-responsive">
+              <table
+                id="zero_config"
+                class="table table-striped table-bordered"
+              >
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Department</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% operations.forEach(s => {%>
+                  <tr>
+                    <td><%=s.employmentId %></td>
+                    <td><%=s.firstname %></td>
+                    <td><%=s.lastname %></td>
+                    <td><%=s.department %></td>
+                  </tr>
+                  <%}); %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="lecturers" role="tabpanel">
+            <div class="table-responsive">
+              <table
+                id="zero_config"
+                class="table table-striped table-bordered"
+              >
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Department</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% lecturers.forEach(s => {%>
+                  <tr>
+                    <td><%=s.employmentId %></td>
+                    <td><%=s.firstname %></td>
+                    <td><%=s.lastname %></td>
+                    <td><%=s.department %></td>
+                  </tr>
+                  <%}); %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="interns" role="tabpanel">
+            <div class="table-responsive">
+              <table
+                id="zero_config"
+                class="table table-striped table-bordered"
+              >
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Department</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% interns.forEach(s => {%>
+                  <tr>
+                    <td><%=s.employmentId %></td>
+                    <td><%=s.firstname %></td>
+                    <td><%=s.lastname %></td>
+                    <td><%=s.department %></td>
+                  </tr>
+                  <%}); %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

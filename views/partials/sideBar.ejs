@@ -1,0 +1,109 @@
+<!-- Sidebar -->
+<nav id="sidebar" class="sidebar js-sidebar">
+  <div class="sidebar-content js-simplebar">
+    <a class="sidebar-brand" href="/admin/">
+      <span class="align-middle">Dashboard</span>
+    </a>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-header">Pages</li>
+
+      <!-- Dashboard Route -->
+      <li class="sidebar-item active">
+        <a class="sidebar-link" href="/admin/">
+          <i class="align-middle" data-feather="sliders"></i>
+          <span class="align-middle">Dashboard</span>
+        </a>
+      </li>
+      <!-- Dashboard Route -->
+
+      <!-- Messages Route -->
+      <li class="sidebar-item mt-3">
+        <a class="sidebar-link" href="/admin/loans">
+          <i class="align-middle" data-feather="send"></i>
+          <span class="align-middle">Loaned Books</span>
+        </a>
+      </li>
+      <!-- Messages Route -->
+
+      <!-- Users Routes -->
+      <!-- Lectures Routes -->
+      <div class="col mt-3">
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="/admin/staff/">
+            <i class="align-middle" data-feather="users"></i>
+            <span class="align-middle">Staff</span>
+          </a>
+        </li>
+
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="/admin/staff/new">
+            <i class="align-middle" data-feather="plus-square"></i>
+            <span class="align-middle">New Staff</span>
+          </a>
+        </li>
+      </div>
+      <!-- Lectures Routes -->
+
+      <!-- Students Routes -->
+      <div class="col mt-3">
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="/admin/students/">
+            <i class="align-middle" data-feather="users"></i>
+            <span class="align-middle">Students</span>
+          </a>
+        </li>
+
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="/admin/students/new">
+            <i class="align-middle" data-feather="plus-square"></i>
+            <span class="align-middle">New Student</span>
+          </a>
+        </li>
+      </div>
+      <!-- Students Routes -->
+
+      <!-- Book Routes -->
+      <div class="col mt-3">
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="/admin/books/">
+            <i class="align-middle" data-feather="book-open"></i>
+            <span class="align-middle">All Books</span>
+          </a>
+        </li>
+
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="/admin/books/new">
+            <i class="align-middle" data-feather="plus-square"></i>
+            <span class="align-middle">New Book</span>
+          </a>
+        </li>
+      </div>
+      <!-- Book Routes -->
+
+      <!-- Report Routes -->
+      <li class="sidebar-item mt-3">
+        <a class="sidebar-link" href="/admin/reports/">
+          <i class="align-middle" data-feather="pie-chart"></i>
+          <span class="align-middle">Reports</span>
+        </a>
+      </li>
+      <!-- Report Routes -->
+    </ul>
+  </div>
+</nav>
+<!-- Sidebar -->
+
+<script>
+  const activeLink = document.querySelector('.active');
+  const links = document.querySelectorAll('.sidebar-link');
+
+  links.forEach(link => {
+    let linkParent = link.parentElement;
+    link.addEventListener('click',()=>{
+      activeLink.classList.remove('active');
+      linkParent.classList.add('active');
+    });
+  });
+
+</script>

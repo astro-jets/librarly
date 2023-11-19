@@ -1,0 +1,47 @@
+<div class="page-wrapper">
+  <!-- ============================================================== -->
+  <div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title mb-0">Transactions</h5>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Description</th>
+            <th scope="col">Book ISBN</th>
+            <th scope="col">Status</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% transactions.forEach(t => { %> <% let status = "";
+          if(t.status==='pending' ){status = "text-warning"}
+          if(t.status==='loaned' || t.status === 'approved' ){status =
+          "text-success"} if(t.status==='overdue' || t.status === 'declined'
+          ){status = "text-danger"} %>
+          <tr>
+            <td><%=t.type%></td>
+            <td><%=t.book%></td>
+            <td class="<%=status%>"><%=t.status %></td>
+            <td><%=t.date%></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Right sidebar -->
+    <!-- ============================================================== -->
+    <!-- .right-sidebar -->
+    <!-- ============================================================== -->
+    <!-- End Right sidebar -->
+    <!-- ============================================================== -->
+  </div>
+</div>

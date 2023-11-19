@@ -1,0 +1,138 @@
+<main class="content">
+  <div class="container-fluid p-0">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title text-info mb-0">
+          New Book
+          <i data-feather="send"></i>
+        </h2>
+      </div>
+
+      <div class="card-body">
+        <form action="/admin/books/new/" method="post">
+          <div class="col-12">
+            <div class="row mb-3">
+              <div class="col-6">
+                <div class="card-body">
+                  <label for="student">
+                    Book ID
+                    <i data-feather="book-open"></i>
+                  </label>
+                  <input
+                    name="bookId"
+                    type="text"
+                    class="form-control"
+                    placeholder="********"
+                    maxlength="8"
+                    style="font-size: 1.3rem; letter-spacing: 10px"
+                  />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card-body">
+                  <label for="student">
+                    Book Name
+                    <i data-feather="book"></i>
+                  </label>
+                  <input
+                    name="name"
+                    type="text"
+                    class="form-control"
+                    placeholder="Book name"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-12">
+                <div class="card-body">
+                  <label for="" class="px-2 mb-1">Select Tag</label>
+                  <div class="row px-4">
+                    <label class="form-check col-3">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value="1"
+                        name="analysis"
+                      />
+                      <span class="form-check-label"> Analysis & Design</span>
+                    </label>
+
+                    <label class="form-check col-3">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="networks"
+                        value="1"
+                      />
+                      <span class="form-check-label"> Networks</span>
+                    </label>
+
+                    <label class="form-check col-3">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="programming"
+                        value="1"
+                      />
+                      <span class="form-check-label"> Programming</span>
+                    </label>
+
+                    <label class="form-check col-3">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="business"
+                        value="1"
+                      />
+                      <span class="form-check-label"> Business</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-6">
+                <div class="card-body">
+                  <label for="student">
+                    Book Thumbnail
+                    <i data-feather="image"></i>
+                  </label>
+                  <input
+                    name="thumbnail"
+                    type="file"
+                    class="w-100 col-12 form-control filepond"
+                  />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card-body">
+                  <label for="student">
+                    Book Description
+                    <i data-feather="file-text"></i>
+                  </label>
+                  <textarea
+                    name="description"
+                    class="form-control"
+                    rows="12"
+                    placeholder="Enter book description"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="row px-3 mb-3">
+              <div class="col-12">
+                <button type="submit" class="col-12 btn btn-info">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

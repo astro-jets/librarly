@@ -1,0 +1,42 @@
+
+<h1 class="mb-3">
+  <strong>Loaned Books</strong>
+</h1>
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table id="zero_config" class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Book</th>
+                <th>Loaned</th>
+                <th>Return</th>
+                <th>Fine</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% loans.forEach(l => { %>
+                <tr>
+                  <td><%=l.student%></td>
+                  <td><%=l.book%></td>
+                  <td><%=l.loanedOn%></td>
+                  <td><%=l.returnOn%></td>
+                  <td>K <%=l.fine.toLocaleString()%></td>
+                  <td>
+                    <a href="/settletloan/<%=l.id%>" class="btn btn-info col-12">
+                      <span data-feather="feather"></span>
+                      Collect Fine
+                    </a>
+                  </td>
+                </tr>                
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

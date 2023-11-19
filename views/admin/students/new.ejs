@@ -1,0 +1,131 @@
+<main class="content">
+  <div class="container-fluid p-0">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title text-info mb-0">
+          New Student
+          <i data-feather="user"></i>
+        </h2>
+      </div>
+
+      <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <form class="form-horizontal" action="/admin/students/new" method="post">
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="form-group col-6">
+                                <label for="stuID" class="col-sm-3 text-end control-label col-form-label">Student ID</label>
+                                <div class="col-md-9">
+                                    <input 
+                                        type="number" 
+                                        class="form-control" 
+                                        id="stuID" 
+                                        name="studentId"
+                                        placeholder="xxxxxxxx" 
+                                        maxlength="8"
+                                        style="letter-spacing: 1.4rem;"
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label class="col-md-3 mt-3">Single Select</label>
+                                <div class="col-md-9">
+                                    <select 
+                                        class="select2 form-select shadow-none" 
+                                        style="width: 100%; height: 36px"
+                                        name="level">
+                                        <option>Select</option>
+                                        <optgroup label="Level 4">
+                                            <option value="L4BIT">BIT</option>
+                                            <option value="L4DC">DC </option>
+                                        </optgroup>
+                                        <optgroup label="Level 5">
+                                            <option value="L5BIT">BIT</option>
+                                            <option value="L5DC">DC </option>
+                                        </optgroup>
+                                        </optgroup>
+                                        <optgroup label="Level 6">
+                                            <option value="L56IT">BIT</option>
+                                            <option value="L6DC">DC </option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="form-group col-6">
+                                <label for="fname" class="col-sm-3 text-end control-label col-form-label">First Name</label>
+                                <div class="col-sm-9">
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        name="firstname" 
+                                        id="fname" 
+                                        placeholder="First Name Here" />
+                                </div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="lname" class="col-sm-3 text-end control-label col-form-label">Last Name</label>
+                                <div class="col-sm-9">
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        name="lastname" 
+                                        id="lname" 
+                                        placeholder="Last Name Here" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="form-group col-6">
+                                <label for="phone" class="col-sm-3 text-end control-label col-form-label">Phone</label>
+                                <div class="col-sm-9">
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    name="phone"
+                                    id="phone" placeholder="Phone" />
+                                </div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="email" class="col-sm-3 text-end control-label col-form-label">Email</label>
+                                <div class="col-sm-9">
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        name="email" 
+                                        id="email" 
+                                        placeholder="Email" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="form-group col-6">
+                                <label for="phone" class="col-sm-3 text-end control-label col-form-label">Password</label>
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="password" />
+                                </div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="password_c" class="col-6 text-end control-label col-form-label">Confirm Password</label>
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" name="password_confirm" id="password_c"
+                                        placeholder="password confirmation" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-top">
+                        <div class="card-body">
+                            <button type="submit" class="btn btn-primary">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+      </div>
+    </div>
+  </div>
+</main>

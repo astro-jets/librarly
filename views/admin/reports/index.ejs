@@ -1,0 +1,150 @@
+<div class="container-fluid">
+  <!-- ============================================================== -->
+  <!-- Sales Cards  -->
+  <!-- ============================================================== -->
+  <div class="row"></div>
+  <!-- ============================================================== -->
+  <!-- Sales Cards  -->
+
+  <div class="col-md-12">
+    <div class="card">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs px-2 py-5" role="tablist">
+        <!-- Expenses -->
+        <li class="card-hover col-4">
+          <a
+            class="nav-link active box bg-primary text-center col-11 p-2"
+            data-bs-toggle="tab"
+            href="#g2"
+            role="tab"
+          >
+            <div class="row">
+              <div class="col-6">
+                <h1 class="font-light text-white">
+                  <i data-feather="anchor"></i>
+                </h1>
+              </div>
+              <div
+                class="col-6 text-center"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                <h5 class="text-white">Reservations</h5>
+              </div>
+            </div>
+          </a>
+        </li>
+        <!-- Expenses -->
+
+        <!-- TAX -->
+        <li class="card-hover col-4">
+          <a
+            class="nav-link box bg-success text-center col-11 p-2"
+            data-bs-toggle="tab"
+            href="#g3"
+            role="tab"
+          >
+            <div class="row">
+              <div class="col-6">
+                <h1 class="font-light text-white">
+                  <i data-feather="send"></i>
+                </h1>
+              </div>
+              <div
+                class="col-6 text-center"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                <h5 class="text-white">Book Borrowed</h5>
+              </div>
+            </div>
+          </a>
+        </li>
+        <!-- TAX -->
+
+        <!-- Earnings -->
+        <li class="card-hover col-4">
+          <a
+            class="nav-link box bg-danger text-center col-11 p-2"
+            data-bs-toggle="tab"
+            href="#g4"
+            role="tab"
+          >
+            <div class="row">
+              <div class="col-6">
+                <h1 class="font-light text-white">
+                  <i data-feather="book-open"></i>
+                </h1>
+              </div>
+              <div
+                class="col-6 text-center"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                <h5 class="text-white">Books Created</h5>
+              </div>
+            </div>
+          </a>
+        </li>
+        <!-- Earnings -->
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content tabcontent-border mt-1">
+        <div class="tab-pane active" id="g2" role="tabpanel">
+          <div class="col-12">
+            <div class="container card col-12 py-2 px-2 rounded">
+              <h4 class="mb-2 mt-2 col-12 text-center">Reservations</h4>
+              <div class="card-body col-12">
+                <div class="chart">
+                  <canvas id="reservations"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="g3" role="tabpanel">
+          <div class="col-12">
+            <div class="card col-12 py-2 px-2">
+              <h4 class="mb-2 mt-2 col-12 text-center">Books Borrowed</h4>
+
+              <div class="col-12">
+                <div class="chart">
+                  <canvas id="books-borrowed"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="g4" role="tabpanel">
+          <div class="col-12">
+            <div class="card col-12 py-2 px-2">
+              <h4 class="mb-2 mt-2 col-12 text-center">Books Created</h4>
+          
+              <div class="col-12">
+                <div class="chart">
+                  <canvas id="books-created"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <section class="section"></section>
+  <!-- ============================================================== -->
+</div>

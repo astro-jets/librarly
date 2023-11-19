@@ -1,0 +1,328 @@
+<% const adi = books.filter(b=> b.tags.includes('analysis')); const programming
+= books.filter(b => b.tags.includes('programming')); const networks =
+books.filter(b => b.tags.includes('networks')); const business =
+books.filter(b=> b.tags.includes('business')); %>
+<style>
+  .show {
+    display: block !important;
+  }
+  .hide {
+    display: none !important;
+  }
+</style>
+<!-- ============================================================== -->
+<div class="container-fluid">
+  <!-- ============================================================== -->
+  <!-- Start Page Content -->
+  <!-- ============================================================== -->
+  <section>
+    <form id="searchForm">
+      <div class="form-group col-12">
+        <div class="row">
+          <div class="col-4">
+            <label for="position-bottom-left">Search for a book</label>
+            <input
+              type="text"
+              name="search"
+              id="position-bottom-left"
+              class="form-control rounded-pill"
+              size="7"
+              style="border: 1px solid rgb(6, 143, 102)"
+            />
+          </div>
+          <div class="col-1">
+            <button
+              type="submit"
+              class="btn btn-lg mt-4"
+              style="
+                background: green;
+                border-radius: 50%;
+                padding: 10px;
+                height: 40px;
+                width: 40px;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <i class="mdi mdi-magnify"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div id="search-content" class="hide row el-element-overlay">
+      <div class="col-lg-3 col-md-6">
+        <div class="card">
+          <div class="el-card-item">
+            <div class="el-card-avatar el-overlay-1">
+              <img src="" id="thumbnail" alt="user" />
+              <div class="el-overlay">
+                <ul class="list-style-none el-info">
+                  <li class="el-item">
+                    <a
+                      class="btn default btn-outline image-popup-vertical-fit el-link"
+                      id="reservationLink"
+                      href=""
+                      ><i class="mdi mdi-book-open"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="el-card-content">
+              <h4 class="mb-0" id="bookName"></h4>
+              <span class="text-muted" id="bookTags"> </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="main-content">
+    <div class="col-12 text-center">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item col-2">
+          <a
+            class="nav-link active"
+            data-bs-toggle="tab"
+            href="#all"
+            role="tab"
+          >
+            <span class="hidden-xs-down">All</span>
+          </a>
+        </li>
+
+        <li class="nav-item col-2">
+          <a class="nav-link" data-bs-toggle="tab" href="#analysis" role="tab">
+            <span class="hidden-xs-down">Analysis & Design</span>
+          </a>
+        </li>
+
+        <li class="nav-item col-2">
+          <a class="nav-link" data-bs-toggle="tab" href="#networks" role="tab">
+            <span class="hidden-xs-down">Networks</span>
+          </a>
+        </li>
+
+        <li class="nav-item col-2">
+          <a
+            class="nav-link"
+            data-bs-toggle="tab"
+            href="#programming"
+            role="tab"
+          >
+            <span class="hidden-xs-down"> Programming</span>
+          </a>
+        </li>
+
+        <li class="nav-item col-2">
+          <a class="nav-link" data-bs-toggle="tab" href="#business" role="tab">
+            <span class="hidden-xs-down"> Business</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-content tabcontent-border mt-5">
+      <div class="tab-pane active" id="all" role="tabpanel">
+        <div class="row el-element-overlay">
+          <% books.forEach(b => { %>
+          <div class="col-lg-3 col-md-6">
+            <div class="card">
+              <div class="el-card-item">
+                <div class="el-card-avatar el-overlay-1">
+                  <img src="<%=b.thumbnail%>" alt="user" />
+                  <div class="el-overlay">
+                    <ul class="list-style-none el-info">
+                      <li class="el-item">
+                        <a
+                          class="btn default btn-outline image-popup-vertical-fit el-link"
+                          href="/books/reserve/<%=b.bookId%>"
+                          ><i class="mdi mdi-book-open"></i
+                        ></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="el-card-content">
+                  <h4 class="mb-0"><%=b.name%></h4>
+                  <span class="text-muted"><%=b.tags%></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="analysis" role="tabpanel">
+        <div class="row el-element-overlay">
+          <% adi.forEach(b=> { %>
+          <div class="col-lg-3 col-md-6">
+            <div class="card">
+              <div class="el-card-item">
+                <div class="el-card-avatar el-overlay-1">
+                  <img src="<%=b.thumbnail%>" alt="user" />
+                  <div class="el-overlay">
+                    <ul class="list-style-none el-info">
+                      <li class="el-item">
+                        <a
+                          class="btn default btn-outline image-popup-vertical-fit el-link"
+                          href="/books/reserve/<%=b.bookId%>"
+                          ><i class="mdi mdi-book-open"></i
+                        ></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="el-card-content">
+                  <h4 class="mb-0"><%=b.name%></h4>
+                  <span class="text-muted"> <%=b.tags%> </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="networks" role="tabpanel">
+        <div class="row el-element-overlay">
+          <% networks.forEach(b=> { %>
+          <div class="col-lg-3 col-md-6">
+            <div class="card">
+              <div class="el-card-item">
+                <div class="el-card-avatar el-overlay-1">
+                  <img src="<%=b.thumbnail%>" alt="user" />
+                  <div class="el-overlay">
+                    <ul class="list-style-none el-info">
+                      <li class="el-item">
+                        <a
+                          class="btn default btn-outline image-popup-vertical-fit el-link"
+                          href="/books/reserve/<%=b.bookId%>"
+                          ><i class="mdi mdi-book-open"></i
+                        ></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="el-card-content">
+                  <h4 class="mb-0"><%=b.name%></h4>
+                  <span class="text-muted"> <%=b.tags%> </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="programming" role="tabpanel">
+        <div class="row el-element-overlay">
+          <% programming.forEach(b=> { %>
+          <div class="col-lg-3 col-md-6">
+            <div class="card">
+              <div class="el-card-item">
+                <div class="el-card-avatar el-overlay-1">
+                  <img src="<%=b.thumbnail%>" alt="user" />
+                  <div class="el-overlay">
+                    <ul class="list-style-none el-info">
+                      <li class="el-item">
+                        <a
+                          class="btn default btn-outline image-popup-vertical-fit el-link"
+                          href="/books/reserve/<%=b.bookId%>"
+                          ><i class="mdi mdi-book-open"></i
+                        ></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="el-card-content">
+                  <h4 class="mb-0"><%=b.name%></h4>
+                  <span class="text-muted"> <%=b.tags%> </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="business" role="tabpanel">
+        <div class="row el-element-overlay">
+          <% business.forEach(b=> { %>
+          <div class="col-lg-3 col-md-6">
+            <div class="card">
+              <div class="el-card-item">
+                <div class="el-card-avatar el-overlay-1">
+                  <img src="<%=b.thumbnail%>" alt="user" />
+                  <div class="el-overlay">
+                    <ul class="list-style-none el-info">
+                      <li class="el-item">
+                        <a
+                          class="btn default btn-outline image-popup-vertical-fit el-link"
+                          href="/books/reserve/<%=b.bookId%>"
+                          ><i class="mdi mdi-book-open"></i
+                        ></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="el-card-content">
+                  <h4 class="mb-0"><%=b.name%></h4>
+                  <span class="text-muted"> <%=b.tags%> </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================== -->
+</div>
+
+<script>
+  const searchForm = document.getElementById("searchForm");
+  const mainContent = document.getElementById("main-content");
+
+  // Search related elements
+  const searchContent = document.getElementById("search-content");
+  const reservationLink = document.getElementById("reservationLink");
+  const thumbnail = document.getElementById("thumbnail");
+  const bookName = document.getElementById("bookName");
+  const bookTags = document.getElementById("bookTags");
+
+  searchForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    let input = searchForm.search.value;
+
+    try {
+      const res = await fetch("/books/search/", {
+        method: "POST",
+        body: JSON.stringify({ input: input }),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const data = await res.json();
+
+      if (data) {
+        const book = data.book;
+        searchForm.search.value = "";
+        mainContent.classList.add("hide");
+        searchContent.classList.remove("hide");
+        reservationLink.href = "book/reserve/" + book._id;
+        thumbnail.src = book.thumbnail;
+        bookTags.innerText = book.tags;
+        bookName.innerText = book.name;
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  });
+</script>
