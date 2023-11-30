@@ -496,7 +496,7 @@ module.exports.adminLogIn = async (req,res)=>{
 module.exports.adminLogOut = async (req,res)=>{
     try{
         res.cookie('jwt','',{httpOnly:true,maxAge:1})
-        res.redirect('/admin/login')
+        res.redirect('/login')
     }
     catch(err)
     {

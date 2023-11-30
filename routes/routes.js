@@ -5,7 +5,6 @@ const {requireAuth, requireAuthAdmin,currentUser,currentStudent} = require('../m
 
 
 // ***************************************** USER ROUTES  *****************************************//
-router.get('/adminpeek',currentUser,requireAuthAdmin,controller.landing);
 router.get('/',requireAuth,currentStudent,controller.landing);
 router.get('/messages',requireAuth,currentStudent,(req,res)=>{
     res.render('messages',{layout:'layouts/library'})
