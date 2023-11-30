@@ -12,6 +12,10 @@ books.filter(b=> b.tags.includes('business')); %>
 </style>
 <!-- ============================================================== -->
 <div class="container-fluid">
+  <h1>
+    <% if(user.type === "student"){%> <%="Welcome back "+user.firstname%>
+    <%}else{%><%="Viewing students pannel as adminstrator"%><% } %>
+  </h1>
   <!-- ============================================================== -->
   <!-- Start Page Content -->
   <!-- ============================================================== -->
@@ -66,8 +70,8 @@ books.filter(b=> b.tags.includes('business')); %>
                       class="btn default btn-outline image-popup-vertical-fit el-link"
                       id="reservationLink"
                       href=""
-                      ><i class="mdi mdi-book-open"></i
-                    ></a>
+                      >Reserve Book</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -142,8 +146,8 @@ books.filter(b=> b.tags.includes('business')); %>
                         <a
                           class="btn default btn-outline image-popup-vertical-fit el-link"
                           href="/books/reserve/<%=b.bookId%>"
-                          ><i class="mdi mdi-book-open"></i
-                        ></a>
+                          >Reserve Book</a
+                        >
                       </li>
                     </ul>
                   </div>
@@ -173,8 +177,8 @@ books.filter(b=> b.tags.includes('business')); %>
                         <a
                           class="btn default btn-outline image-popup-vertical-fit el-link"
                           href="/books/reserve/<%=b.bookId%>"
-                          ><i class="mdi mdi-book-open"></i
-                        ></a>
+                          >Reserve Book</a
+                        >
                       </li>
                     </ul>
                   </div>
@@ -204,8 +208,8 @@ books.filter(b=> b.tags.includes('business')); %>
                         <a
                           class="btn default btn-outline image-popup-vertical-fit el-link"
                           href="/books/reserve/<%=b.bookId%>"
-                          ><i class="mdi mdi-book-open"></i
-                        ></a>
+                          >Reserve Book</a
+                        >
                       </li>
                     </ul>
                   </div>
@@ -235,8 +239,8 @@ books.filter(b=> b.tags.includes('business')); %>
                         <a
                           class="btn default btn-outline image-popup-vertical-fit el-link"
                           href="/books/reserve/<%=b.bookId%>"
-                          ><i class="mdi mdi-book-open"></i
-                        ></a>
+                          >Reserve Book</a
+                        >
                       </li>
                     </ul>
                   </div>
@@ -266,8 +270,8 @@ books.filter(b=> b.tags.includes('business')); %>
                         <a
                           class="btn default btn-outline image-popup-vertical-fit el-link"
                           href="/books/reserve/<%=b.bookId%>"
-                          ><i class="mdi mdi-book-open"></i
-                        ></a>
+                          >Reserve Book</a
+                        >
                       </li>
                     </ul>
                   </div>
@@ -313,6 +317,7 @@ books.filter(b=> b.tags.includes('business')); %>
 
       if (data) {
         const book = data.book;
+        console.log(book.name);
         searchForm.search.value = "";
         mainContent.classList.add("hide");
         searchContent.classList.remove("hide");

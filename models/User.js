@@ -28,6 +28,11 @@ const userSchema = new mongoose.Schema({
         required:true,
         default:Date.now
     },
+    type:{
+        type:String,
+        default:"admin",
+        required:true
+    }
 })
 
 

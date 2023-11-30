@@ -89,21 +89,29 @@
         </a>
       </li>
       <!-- Report Routes -->
+
+      <!-- Report Routes -->
+      <li class="sidebar-item mt-3">
+        <a class="sidebar-link" href="/adminpeek">
+          <i class="align-middle" data-feather="arrow-right"></i>
+          <span class="align-middle">Students Portal</span>
+        </a>
+      </li>
+      <!-- Report Routes -->
     </ul>
   </div>
 </nav>
 <!-- Sidebar -->
 
 <script>
-  const activeLink = document.querySelector('.active');
-  const links = document.querySelectorAll('.sidebar-link');
+  const activeLink = document.querySelector(".active");
+  const links = document.querySelectorAll(".sidebar-link");
 
-  links.forEach(link => {
+  links.forEach((link) => {
     let linkParent = link.parentElement;
-    link.addEventListener('click',()=>{
-      activeLink.classList.remove('active');
-      linkParent.classList.add('active');
+    link.addEventListener("click", () => {
+      activeLink.classList.remove("active");
+      linkParent.classList.add("active");
     });
   });
-
 </script>

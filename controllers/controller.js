@@ -58,7 +58,11 @@ const handleErrors = (err)=>{
 module.exports.landing= async (req,res)=>{ 
     try{
         const books = await Book.find();
-        res.render('index',{layout:'layouts/library',books:books})
+        res.render('index',{
+            layout:'layouts/library',
+            books:books,
+            user:res.locals.user
+        })
     }
     catch(err){res.send(err.message)}
 }
@@ -169,7 +173,7 @@ module.exports.allStudents = async (req,res)=>{
 module.exports.newStudent = async (req,res)=>{
     try{
         const {firstname,lastname,phone,email,level,studentId,password} = req.body;
-        const student = await Student.create({firstname,lastname,phone,email,level,studentId,password})
+        const student = await Student.create({firstname,lastname,phone,email,level,studentId,password,type:"student"})
         res.redirect('/admin/students')
 
     }catch(err){
@@ -263,7 +267,7 @@ module.exports.searchBook= async (req,res)=>{
     try{
         const books = await Book.findOne({name:req.body.input});
         const book = {
-            _id:books._id,
+            _id:books.bookId,
             name:books.name,
             thumbnail:books.thumbnail,
             tags:books.tags
@@ -383,22 +387,28 @@ module.exports.declineReservation= async (req,res)=>{
 module.exports.transactions = async (req,res)=>{
     try{
         const user = res.locals.user;
-        const trans = await Transaction.find({user:user._id});
-        const transactions = [];
-
-        for (let i = 0; i < trans.length; i++) {
-            const t = trans[i];
-            let book = await Book.findOne({bookId:t.book});
-            transactions.push({
-                type:t.type,
-                book: book.name,
-                status: t.status,
-                date:moment(t.created_on).calendar()
-            });
+        if(user.type === "admin"){
+            const transactions = [];
+            res.render('transactions',{user:user,transactions:transactions,layout:'layouts/library'})
         }
-        res.render('transactions',{user:user,transactions:transactions,layout:'layouts/library'});
+        else{
+            const trans = await Transaction.find({user:user._id});
+            const transactions = [];
+
+            for (let i = 0; i < trans.length; i++) {
+                const t = trans[i];
+                let book = await Book.findOne({bookId:t.book});
+                transactions.push({
+                    type:t.type,
+                    book: book.name,
+                    status: t.status,
+                    date:moment(t.created_on).calendar()
+                });
+            }
+            res.render('transactions',{user:user,transactions:transactions,layout:'layouts/library'});
+        }
     }
-    catch(err){console.log(err)}
+    catch(err){res.send(err.message)}
 }
 // Transactions
 
@@ -449,7 +459,8 @@ module.exports.adminSignUp = async (req,res)=>{
         firstname:req.body.firstname,
         lastname:req.body.lastname,
         email:req.body.email,
-        password:req.body.password
+        password:req.body.password,
+        type:"admin"
     }
 
     try{

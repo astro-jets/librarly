@@ -36,7 +36,13 @@ const studentSchema = new mongoose.Schema({
     created_on:{
         type:Date,
         default:Date.now()
+    },
+    type:{
+        type:String,
+        default:"student",
+        required:true
     }
+
 });
 
 
